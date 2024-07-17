@@ -14,4 +14,13 @@ public class PetsController(ManagementDbContext dbContext) : ControllerBase
         var all = await dbContext.Pets.Include(p => p.Breed).ToListAsync();
         return Ok(all);
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var pet = await dbContext.Pets.Include(p => p.Breed)
+            .Where(p => p.Id == id)
+            .FirstOrDefaultAsync();
+        return Ok(pet);
+    }
 }
