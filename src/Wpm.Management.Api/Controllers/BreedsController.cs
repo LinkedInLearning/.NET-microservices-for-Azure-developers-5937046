@@ -37,7 +37,7 @@ public class BreedsController(ManagementDbContext dbContext,
         }
         catch (Exception ex)
         {
-            logger.LogError(ex.Message);
+            logger.LogError(ex.ToString());
             return StatusCode((int)HttpStatusCode.InternalServerError);
         }
     }
