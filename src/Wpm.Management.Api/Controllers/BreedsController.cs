@@ -20,8 +20,8 @@ public class BreedsController(ManagementDbContext dbContext,
     [HttpGet("{id}", Name = nameof(GetBreedById))]
     public async Task<IActionResult> GetBreedById(int id)
     {
-        var pet = await dbContext.Breeds.FindAsync(id);
-        return pet != null ? Ok(pet): NotFound();
+        var breed = await dbContext.Breeds.FindAsync(id);
+        return breed != null ? Ok(breed): NotFound();
     }
 
     [HttpPost]
