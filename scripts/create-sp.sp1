@@ -1,0 +1,4 @@
+$subscription = '<YOUR SUBSCRIPTION ID>'
+$rg = '<RESOURCE GROUP NAME>'
+
+az ad sp create-for-rbac --name wpmsp --role contributor --scopes /subscriptions/$subscription/resourceGroups/$rg --json-auth --output json
