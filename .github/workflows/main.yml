@@ -3,7 +3,7 @@ name: Wpm
 on:
   push:
      branches:
-       - 03_05e
+       - 03_07e
 
 jobs:
    build:
@@ -24,7 +24,10 @@ jobs:
             username: ${{ secrets.ACR_USERNAME }}
             password: ${{ secrets.ACR_PASSWORD }}
 
+       - name: Get current date in yyyymmdd format
+         run: echo "DATE_TIME=$(date +'%Y%m%d')" >> $GITHUB_ENV
+
        - name: 'Build and push container image'
          run: |
-            docker build src -f src/Wpm.Management.Api/Dockerfile -t ${{ secrets.ACR_LOGIN_SERVER }}/wpm-management-api:${{ github.sha }}
-            docker push ${{ secrets.ACR_LOGIN_SERVER }}/wpm-management-api:${{ github.sha }}
+            docker build src -f src/Wpm.Management.Api/Dockerfile -t ${{ secrets.ACR_LOGIN_SERVER }}/wpm-management-api:${{ env.DATE_TIME }}.${{ github.run_number }}
+            docker push ${{ secrets.ACR_LOGIN_SERVER }}/wpm-management-api:${{ env.DATE_TIME }}.${{ github.run_number }}
