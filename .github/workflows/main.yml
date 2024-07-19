@@ -3,7 +3,7 @@ name: Wpm
 on:
   push:
      branches:
-       - 05_07e
+       - 05_08e
 
 jobs:
    build:
@@ -57,4 +57,4 @@ jobs:
             containerAppName: wpm-clinic
             resourceGroup: wpm
             imageToDeploy: ${{ secrets.ACR_LOGIN_SERVER }}/wpm-clinic-api:${{ env.DATE_TIME }}.${{ github.run_number }}
-            environmentVariables: Logging__LogLevel__Microsoft.EntityFrameworkCore=Debug
+            environmentVariables: Logging__LogLevel__Microsoft.EntityFrameworkCore=Debug, Wpm__ManagementUri=http://wpm-management
