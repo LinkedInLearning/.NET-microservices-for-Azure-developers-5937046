@@ -3,7 +3,7 @@ name: Wpm
 on:
   push:
      branches:
-       - 04_03e
+       - 04_05e
 
 jobs:
    build:
@@ -41,3 +41,4 @@ jobs:
             containerAppName: wpm-management
             resourceGroup: wpm
             imageToDeploy: ${{ secrets.ACR_LOGIN_SERVER }}/wpm-management-api:${{ env.DATE_TIME }}.${{ github.run_number }}
+            environmentVariables: Logging__LogLevel__Microsoft.EntityFrameworkCore=Debug
