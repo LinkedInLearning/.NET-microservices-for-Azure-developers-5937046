@@ -1,0 +1,9 @@
+az containerapp create --name wpm-clinic `
+--resource-group wpm `
+--environment wpmcontainerappenv `
+--ingress external `
+--target-port 8080 `
+--registry-server wpmacr.azurecr.io `
+--registry-username wpmacr `
+--registry-password $ACR_PASSWORD `
+--query properties.configuration.ingress.fqdn
