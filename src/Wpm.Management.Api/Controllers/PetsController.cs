@@ -43,6 +43,32 @@ public class PetsController(ManagementDbContext dbContext,
             return StatusCode((int)HttpStatusCode.InternalServerError);
         }
     }
+
+    [HttpPost("{id}")]
+    public async Task<IActionResult> Update(int id, PetUpdate petUpdate)
+    {
+        try
+        {
+            var pet = await dbContext.Pets.FindAsync(id);
+            
+            if (pet == null)
+            {
+                return NotFound(id);
+            }
+
+            pet.Name = petUpdate.Name;
+            pet.Age = petUpdate.Age;
+            pet.BreedId = petUpdate.BreedId;
+            await dbContext.SaveChangesAsync();
+            
+            return Ok(petUpdate);
+        }
+        catch (Exception ex)
+        {
+            logger?.LogError(ex.ToString());
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
+    }
 }
 
 public record NewPet(string Name, int Age, int BreedId)
@@ -52,3 +78,5 @@ public record NewPet(string Name, int Age, int BreedId)
         return new Pet() { Name = Name, Age = Age, BreedId = BreedId };
     }
 }
+
+public record PetUpdate(string Name, int Age, int BreedId);
