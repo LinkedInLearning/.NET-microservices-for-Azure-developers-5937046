@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Management.Api", "Wpm.Management.Api\Wpm.Management.Api.csproj", "{79812307-6E93-4B0B-BC73-CDECCAEE3B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic", "Wpm.Clinic\Wpm.Clinic.csproj", "{12400CD4-7FE0-4D7A-9C47-8E84AF684ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Clinic.Api", "Wpm.Clinic.Api\Wpm.Clinic.Api.csproj", "{12400CD4-7FE0-4D7A-9C47-8E84AF684ACA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
