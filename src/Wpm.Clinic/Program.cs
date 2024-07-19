@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Wpm.Clinic.Application;
 using Wpm.Clinic.DataAccess;
 using Wpm.Clinic.ExternalServices;
 
@@ -11,13 +12,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ManagementService>();
+builder.Services.AddScoped<ClinicApplicationService>();
 builder.Services.AddDbContext<ClinicDbContext>(options =>
 {
     options.UseInMemoryDatabase("WpmClinic");
 });
 builder.Services.AddHttpClient<ManagementService>(client =>
 {
-    var uri = builder.Configuration.GetValue<string>("Wpm__ManagementUri");
+    var uri = builder.Configuration.GetValue<string>("Wpm__ManagementUri") ??
+    builder.Configuration.GetValue<string>("Wpm:ManagementUri");
     client.BaseAddress = new Uri(uri);
 });
 
