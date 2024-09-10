@@ -1,7 +1,9 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# .NET Microservices for Azure Developers
+This is the repository for the LinkedIn Learning course `.NET Microservices for Azure Developers`. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![course-name-alt-text][lil-thumbnail-url] 
+![lil-thumbnail-url] 
+
+It's no longer only architects who need to understand the benefits and challenges of cloud-native architectures, such as microservices. By leveraging this popular architectural pattern, developers and other key application stakeholders can enhance the availability, reliability, and scalability of their software solutions. In this course, instructor Rodrigo Díaz Concha provides an overview of microservices, as well as how to use .NET to create microservices that can be deployed in Azure. Rodrigo covers key topics such as microservices pros and cons, writing unit tests, microservices containerization with Docker, microservices deployment on top of an orchestrator, and synchronous communication between microservices.
 
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
@@ -22,15 +24,18 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+## Instructor
 
+Rodrigo Díaz Concha
+
+Solutions Architect, Microsoft Regional Director, and Microsoft MVP
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/rodrigo-diaz-concha?u=104).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[lil-course-url]: https://www.linkedin.com/learning/dot-net-microservices-for-azure-developers
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQEt0Nhsuy5q1Q/learning-public-crop_675_1200/learning-public-crop_675_1200/0/1724438751225?e=2147483647&v=beta&t=dKn6GS8arOQzRJPeJD-LorVRjNT_w-rMlD4k1TxYQDQ
 
