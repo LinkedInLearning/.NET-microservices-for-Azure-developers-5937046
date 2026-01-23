@@ -1,0 +1,18 @@
+name: Wpm
+
+on:
+  push:
+     branches:
+       - 03_02e
+
+jobs:
+   build:
+     runs-on: ubuntu-latest
+
+     steps:
+       - uses: actions/checkout@v3
+
+       - name: Log in
+         uses: azure/login@v1
+         with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
